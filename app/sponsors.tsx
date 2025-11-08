@@ -1,11 +1,11 @@
 // Fix imports: use Expo Image only
 import { Image } from 'expo-image';
-import { router } from 'expo-router';
 import React from 'react';
-import { Animated, Linking, Pressable, SafeAreaView, ScrollView, Text, View } from 'react-native';
+import { Linking, Pressable, SafeAreaView, ScrollView, Text, View } from 'react-native';
+import { FloatingActions } from '../components/floating-actions';
 
-// type Partner and data sections inside the Partners() component
-type Partner = {
+// type Sponsor and data sections inside the Sponsors() component
+type Sponsor = {
   name: string;
   tier: 'Presenting' | 'Platinum' | 'Supporting';
   description?: string;
@@ -13,34 +13,9 @@ type Partner = {
   website?: string | null;
 };
 
-export default function Partners() {
-  // Auto-navigate to Home after 5 seconds
-  const [remaining, setRemaining] = React.useState(6);
-  const progress = React.useRef(new Animated.Value(0)).current;
-
-  React.useEffect(() => {
-    const countdown = setInterval(() => {
-      setRemaining((prev) => (prev > 0 ? prev - 1 : 0));
-    }, 1000);
-
-    Animated.timing(progress, {
-      toValue: 1,
-      duration: 6000,
-      useNativeDriver: false,
-    }).start();
-
-    const t = setTimeout(() => {
-      router.replace('/home');
-    }, 6000);
-
-    return () => {
-      clearInterval(countdown);
-      clearTimeout(t);
-    };
-  }, []);
-
+export default function Sponsors() {
   // Presenting sponsor (Title)
-  const presenting: Partner[] = [
+  const presenting: Sponsor[] = [
     {
       name: 'Seinn Yaung So Manufacturing Co., Ltd.',
       tier: 'Presenting',
@@ -50,8 +25,8 @@ export default function Partners() {
     },
   ];
 
-  // Platinum Sponsors — previously "Champion"
-  const platinum: Partner[] = [
+  // Platinum Sponsors — previously “Champion”
+  const platinum: Sponsor[] = [
     {
       name: 'Champion Sponsor 1',
       tier: 'Platinum',
@@ -66,8 +41,8 @@ export default function Partners() {
     },
   ];
 
-  // Supporting Sponsors — previously "Event"
-  const supporting: Partner[] = [
+  // Supporting Sponsors — previously “Event”
+  const supporting: Sponsor[] = [
     {
       name: 'Supporting Sponsor',
       tier: 'Supporting',
@@ -83,7 +58,17 @@ export default function Partners() {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
-      <View style={{ flex: 1, padding: 20, backgroundColor: 'white' }}>
+      {/* Back button */}
+      {/* <BackButton
+        color="black"
+        style={{
+          top: 75,
+          left: 16,
+          zIndex: 20,
+          elevation: 3,
+        }}
+      /> */}
+      <View style={{ flex: 1, padding: 20, backgroundColor: 'white', marginTop: 20}}>
         {/* Header */}
         <View style={{ alignItems: 'center', marginBottom: 12 }}>
           <Text
@@ -95,21 +80,19 @@ export default function Partners() {
               letterSpacing: 0.3,
             }}
           >
-            Our Partners
+            Our Sponsors
           </Text>
-          {/* <Text style={{ marginTop: 6, color: '#555', textAlign: 'center' }}>
+          <Text style={{ marginTop: 15, color: '#555', textAlign: 'center' }}>
             Huge thanks to our partners who make this possible.
-          </Text> */}
+          </Text>
         </View>
 
-        {/* Removed countdown from here */}
-
-        <ScrollView contentContainerStyle={{ paddingBottom: 24 }}>
+        <ScrollView contentContainerStyle={{ paddingBottom: 96, paddingTop: 15 }}>
           {/* Presenting Sponsor */}
           <View style={{ marginBottom: 24 }}>
             <View style={{ flexDirection: 'row', alignItems: 'center', columnGap: 8, marginBottom: 10 }}>
               <View style={{ flex: 1, height: 1, backgroundColor: '#1e90ff' }} />
-              <Text style={{ color: '#1e90ff', fontSize: 14, fontWeight: '800' }}>PRESENTING PARTNER</Text>
+              <Text style={{ color: '#1e90ff', fontSize: 14, fontWeight: '800' }}>PRESENTING SPONSOR</Text>
               <View style={{ flex: 1, height: 1, backgroundColor: '#1e90ff' }} />
             </View>
 
@@ -127,7 +110,7 @@ export default function Partners() {
               {presenting[0]?.logoUrl ? (
                 <Image
                   source={{ uri: presenting[0].logoUrl! }}
-                  style={{ width: '100%', height: 130 }}
+                  style={{ width: '100%', height: 100 }}
                   contentFit="contain"
                 />
               ) : (
@@ -143,7 +126,7 @@ export default function Partners() {
           <View style={{ marginBottom: 24 }}>
             <View style={{ flexDirection: 'row', alignItems: 'center', columnGap: 8, marginBottom: 10 }}>
               <View style={{ flex: 1, height: 1, backgroundColor: '#1e90ff' }} />
-              <Text style={{ color: '#1e90ff', fontSize: 14, fontWeight: '800' }}>PLATINUM PARTNERS</Text>
+              <Text style={{ color: '#1e90ff', fontSize: 14, fontWeight: '800' }}>PLATINUM SPONSORS</Text>
               <View style={{ flex: 1, height: 1, backgroundColor: '#1e90ff' }} />
             </View>
             <View
@@ -162,7 +145,7 @@ export default function Partners() {
                     onPress={() => openLink(platinum[0].website)}
                     style={{
                       width: '45%',
-                      minHeight: 110,
+                      minHeight: 100,
                       backgroundColor: 'white',
                       borderRadius: 12,
                       alignItems: 'center',
@@ -173,7 +156,7 @@ export default function Partners() {
                     }}
                   >
                     {platinum[0].logoUrl ? (
-                      <Image source={{ uri: platinum[0].logoUrl }} style={{ width: '100%', height: 120 }} contentFit="contain" />
+                      <Image source={{ uri: platinum[0].logoUrl }} style={{ width: '100%', height: 100 }} contentFit="contain" />
                     ) : (
                       <Text style={{ color: '#333', fontWeight: '700' }}>{platinum[0].name}</Text>
                     )}
@@ -194,7 +177,7 @@ export default function Partners() {
                     onPress={() => openLink(platinum[1].website)}
                     style={{
                       width: '45%',
-                      minHeight: 110,
+                      minHeight: 100,
                       backgroundColor: 'white',
                       borderRadius: 12,
                       alignItems: 'center',
@@ -205,7 +188,7 @@ export default function Partners() {
                     }}
                   >
                     {platinum[1].logoUrl ? (
-                      <Image source={{ uri: platinum[1].logoUrl }} style={{ width: '100%', height: 110 }} contentFit="contain" />
+                      <Image source={{ uri: platinum[1].logoUrl }} style={{ width: '100%', height: 100 }} contentFit="contain" />
                     ) : (
                       <Text style={{ color: '#333', fontWeight: '700' }}>{platinum[1].name}</Text>
                     )}
@@ -219,7 +202,7 @@ export default function Partners() {
                       onPress={() => openLink(s.website)}
                       style={{
                         width: '45%',
-                        minHeight: 110,
+                        minHeight: 100,
                         backgroundColor: 'white',
                         borderRadius: 12,
                         alignItems: 'center',
@@ -230,7 +213,7 @@ export default function Partners() {
                       }}
                     >
                       {s.logoUrl ? (
-                        <Image source={{ uri: s.logoUrl }} style={{ width: '100%', height: 110 }} contentFit="contain" />
+                        <Image source={{ uri: s.logoUrl }} style={{ width: '100%', height: 100 }} contentFit="contain" />
                       ) : (
                         <Text style={{ color: '#333', fontWeight: '700' }}>{s.name}</Text>
                       )}
@@ -245,7 +228,7 @@ export default function Partners() {
           <View style={{ marginBottom: 24 }}>
             <View style={{ flexDirection: 'row', alignItems: 'center', columnGap: 8, marginBottom: 10 }}>
               <View style={{ flex: 1, height: 1, backgroundColor: '#1e90ff' }} />
-              <Text style={{ color: '#1e90ff', fontSize: 14, fontWeight: '800' }}>SUPPORTING PARTNERS</Text>
+              <Text style={{ color: '#1e90ff', fontSize: 14, fontWeight: '800' }}>SUPPORTING SPONSORS</Text>
               <View style={{ flex: 1, height: 1, backgroundColor: '#1e90ff' }} />
             </View>
             <View
@@ -264,7 +247,7 @@ export default function Partners() {
                     onPress={() => openLink(s.website)}
                     style={{
                       width: '45%',
-                      minHeight: 110,
+                      minHeight: 100,
                       backgroundColor: 'white',
                       borderRadius: 12,
                       alignItems: 'center',
@@ -275,7 +258,7 @@ export default function Partners() {
                     }}
                   >
                     {s.logoUrl ? (
-                      <Image source={{ uri: s.logoUrl }} style={{ width: '100%', height: 100 }} contentFit="contain" />
+                      <Image source={{ uri: s.logoUrl }} style={{ width: '100%', height: 150 }} contentFit="contain" />
                     ) : (
                       <Text style={{ color: '#333', fontWeight: '700' }}>{s.name}</Text>
                     )}
@@ -299,7 +282,7 @@ export default function Partners() {
               }}
             >
               <Pressable
-                onPress={() => Linking.openURL('mailto:kyisinthein6940@gmail.com?subject=Partner%20Inquiry')}
+                onPress={() => Linking.openURL('mailto:kyisinthein6940@gamil.com?subject=Sponsor%20Inquiry')}
                 style={{
                   paddingVertical: 10,
                   paddingHorizontal: 14,
@@ -309,7 +292,7 @@ export default function Partners() {
                   alignItems: 'center',
                 }}
               >
-                <Text style={{ color: 'white', fontWeight: '700' }}>Become a Partner</Text>
+                <Text style={{ color: 'white', fontWeight: '700' }}>Become a Sponsor</Text>
               </Pressable>
               <Pressable
                 onPress={() => router.push('/about')}
@@ -327,36 +310,8 @@ export default function Partners() {
             </View>
           </View> */}
         </ScrollView>
-      </View>
 
-      {/* Countdown to Home — bottom-fixed inside SafeAreaView */}
-      <View style={{ position: 'absolute', left: 20, right: 20, bottom: 50 }}>
-        <View style={{ alignSelf: 'center' }}>
-          <Text style={{ color: '#1e90ff', fontWeight: '600', marginBottom: 10 }}>
-            Home Page in {remaining}s
-          </Text>
-        </View>
-        <View
-          style={{
-            width: '100%',
-            height: 10,
-            backgroundColor: '#eaf2ff',
-            borderRadius: 20,
-            overflow: 'hidden',
-            marginTop: 10,
-          }}
-        >
-          <Animated.View
-            style={{
-              width: progress.interpolate({
-                inputRange: [0, 1],
-                outputRange: ['0%', '100%'],
-              }),
-              height: '100%',
-              backgroundColor: '#1e90ff',
-            }}
-          />
-        </View>
+        <FloatingActions style={{ position: 'absolute', right: 12, bottom: 24 }} />
       </View>
     </SafeAreaView>
   );
