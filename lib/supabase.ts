@@ -1,11 +1,22 @@
 import { createClient } from '@supabase/supabase-js';
+import Constants from 'expo-constants';
 
-const url = process.env.EXPO_PUBLIC_SUPABASE_URL;
-const anon = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
+const extra = (Constants?.expoConfig?.extra ?? {}) as {
+  supabaseUrl?: string;
+  supabaseAnonKey?: string;
+};
+
+const url =
+  process.env.EXPO_PUBLIC_SUPABASE_URL ??
+  extra.supabaseUrl;
+
+const anon =
+  process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY ??
+  extra.supabaseAnonKey;
 
 if (!url || !anon) {
-  console.error('Missing Supabase env', { hasUrl: !!url, hasAnon: !!anon });
-  throw new Error('Missing Supabase env: EXPO_PUBLIC_SUPABASE_URL or EXPO_PUBLIC_SUPABASE_ANON_KEY');
+  console.warn('Missing Supabase config. Set EXPO_PUBLIC_SUPABASE_URL and EXPO_PUBLIC_SUPABASE_ANON_KEY or app.json extra.');
 }
 
-export const supabase = createClient(url, anon);
+// Create a client even if config is missing; queries will return errors instead of crashing
+export const supabase = createClient(url ?? 'https://invalid.local', anon ?? 'invalid');

@@ -68,7 +68,7 @@ export default function Sponsors() {
           elevation: 3,
         }}
       /> */}
-      <View style={{ flex: 1, padding: 20, backgroundColor: 'white', marginTop: 20}}>
+      <View style={{ flex: 1, padding: 20, backgroundColor: 'white', marginTop: 40}}>
         {/* Header */}
         <View style={{ alignItems: 'center', marginBottom: 12 }}>
           <Text

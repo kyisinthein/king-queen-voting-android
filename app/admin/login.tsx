@@ -70,7 +70,7 @@ export default function AdminLogin() {
         end={{ x: 0, y: 1 }}
         style={{ flex: 1 }}
       >
-        <View style={{ flex: 1, padding: 20, backgroundColor: 'transparent', marginTop: 25 }}>
+        <View style={{ flex: 1, padding: 20, backgroundColor: 'transparent', marginTop: 50 }}>
           {/* Header */}
           <View style={{ alignItems: 'center', marginBottom: 12 }}>
             <Text

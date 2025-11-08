@@ -2,9 +2,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useMemo, useState } from 'react';
 import { ActivityIndicator, FlatList, Image, Pressable, SafeAreaView, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context'; // NEW
 import { FloatingActions } from '../components/floating-actions';
 import { supabase } from '../lib/supabase';
-import { useSafeAreaInsets } from 'react-native-safe-area-context'; // NEW
 
 type University = { id: string; name: string };
 type Category = { id: string; university_id: string; gender: string; type: string };
@@ -299,7 +299,7 @@ export default function LiveResults() {
             elevation: 3,
           }}
         /> */}
-        <View style={{ flex: 1, padding: 20, backgroundColor: 'transparent', marginTop: 20 }}>
+        <View style={{ flex: 1, padding: 20, backgroundColor: 'transparent', marginTop: 50 }}>
           <Text
             style={{
               fontSize: 26,
@@ -431,7 +431,7 @@ export default function LiveResults() {
                                 source={{ uri: cand.image_url }}
                                 style={{ width: 44, height: 44, borderRadius: 22 }}
                                 resizeMode="cover"
-                                blurRadius={200} // strong blur for suspense
+                                blurRadius={250} // strong blur for suspense
                               />
                             ) : (
                               <Text style={{ fontSize: 16, color: '#333', fontWeight: '700' }}>

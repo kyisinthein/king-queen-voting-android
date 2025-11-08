@@ -4,8 +4,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, Pressable, SafeAreaView, Text, View } from 'react-native';
-import { supabase } from '../lib/supabase';
 import { useSafeAreaInsets } from 'react-native-safe-area-context'; // NEW
+import { supabase } from '../lib/supabase';
 
 type University = {
   id: string;
@@ -98,7 +98,7 @@ export default function Home() {
         end={{ x: 0, y: 1 }}
         style={{ flex: 1 }}
       >
-        <View style={{ flex: 1, padding: 20, backgroundColor: 'transparent', marginTop: 25 }}>
+        <View style={{ flex: 1, padding: 20, backgroundColor: 'transparent', marginTop: 50 }}>
           <Text style={{ alignSelf: 'center', fontSize: 24, fontWeight: '800', color: 'white', letterSpacing: 0.3 }}>
             King & Queen Voting
           </Text>
@@ -193,7 +193,7 @@ export default function Home() {
                         justifyContent: 'center',
                       }}
                     >
-                      <IconSymbol name="chevron.right" size={12} color="rgba(255,255,255,1)" />
+                      <IconSymbol name="chevron.right" size={15} color="rgba(255,255,255,1)" />
                     </View>
                   </Pressable>
                 )}

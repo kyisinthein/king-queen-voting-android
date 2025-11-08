@@ -16,9 +16,15 @@
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundColor": "#ffffff",
+        "backgroundColor": "#000000",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       }
+    },
+    "androidStatusBar": {
+      "backgroundColor": "#538df8ff",
+      "barStyle": "light-content",
+      "hidden": false,
+      "translucent": false
     },
     "web": {
       "output": "static",
@@ -32,7 +38,7 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff",
+          "backgroundColor": "#000000",
           "dark": {
             "backgroundColor": "#000000"
           }
@@ -45,6 +51,8 @@
     },
     "extra": {
       "router": {},
+      "supabaseUrl": "https://gjqkgldclvvcdnzngmyu.supabase.co",
+      "supabaseAnonKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdqcWtnbGRjbHZ2Y2Ruem5nbXl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE2MDM3ODgsImV4cCI6MjA3NzE3OTc4OH0.SKXtu8NjlXwnq2ErWoCrfKRWiV84BOnbk3KN2fMKKC4",
       "eas": {
         "projectId": "83a6c521-7eae-421e-9893-add1b4ce3e40"
       }

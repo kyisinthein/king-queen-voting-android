@@ -297,7 +297,7 @@ export default function AdminResults() {
         end={{ x: 0, y: 1 }}
         style={{ flex: 1 }}
       >
-        <View style={{ flex: 1 , padding: 20, backgroundColor: 'transparent', marginTop: -10 }}>
+        <View style={{ flex: 1 , padding: 20, backgroundColor: 'transparent', marginTop: 20 }}>
           {/* Header */}
         <View
           style={{

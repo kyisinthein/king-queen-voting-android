@@ -1,8 +1,8 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import React, { useState } from 'react';
 import { Linking, Pressable, SafeAreaView, ScrollView, Text, View } from 'react-native';
-import { FloatingActions } from '../components/floating-actions';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { FloatingActions } from '../components/floating-actions';
 
 export default function About() {
   const cards = [
@@ -91,7 +91,7 @@ export default function About() {
           <View style={{ flex: 1, backgroundColor: 'transparent' }}>
             <ScrollView contentContainerStyle={{ padding: 20, paddingBottom: 32 }}>
               {/* Header */}
-              <View style={{ alignItems: 'center', marginBottom: 12, marginTop: 20 }}>
+              <View style={{ alignItems: 'center', marginBottom: 12, marginTop: 40 }}>
                 <Text style={{ fontSize: 26, fontWeight: '800', color: 'white', textAlign: 'center', letterSpacing: 0.3 }}>
                   About Us
                 </Text>

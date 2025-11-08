@@ -286,7 +286,7 @@ export default function CandidateDetails() {
         <View style={{ flex: 1, padding: 20, paddingBottom: 110, backgroundColor: 'transparent' }}>
           <View
             style={{
-              marginTop: 20,
+              marginTop: 50,
               backgroundColor: 'white',
               
               borderBottomLeftRadius: 0,

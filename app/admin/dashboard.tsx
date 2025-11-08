@@ -119,7 +119,7 @@ export default function AdminDashboard() {
       <SafeAreaView style={{ flex: 1, backgroundColor: 'transparent' }}>
         
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <ActivityIndicator size="large" color="white" />
+            <ActivityIndicator size="large" color="blue" />
             <Text style={{ color: 'white', marginTop: 16 }}>Loading dashboard...</Text>
           </View>
        
@@ -173,7 +173,7 @@ export default function AdminDashboard() {
           borderBottomWidth: 1,
           borderBottomColor: 'rgba(255, 255, 255, 0.2)',
         }}>
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 25 }}>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 40 }}>
             <View>
               <Text style={{ fontSize: 24, fontWeight: '700', color: 'white' }}>
                 Admin Dashboard

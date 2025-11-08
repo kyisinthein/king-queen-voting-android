@@ -34,8 +34,8 @@ export default function RootLayout() {
         <Stack.Screen name="home" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
       </Stack>
-      {/* Hide status bar on Android, keep iOS visible */}
-      <StatusBar hidden={Platform.OS === 'android'} style="light" />
+      {/* Show status bar on Android and iOS; keep light content */}
+      <StatusBar hidden={false} style="light" />
     </SafeAreaProvider>
   );
 }

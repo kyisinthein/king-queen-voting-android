@@ -1,9 +1,9 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import React, { useState } from 'react';
 import { Linking, Pressable, SafeAreaView, ScrollView, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context'; // NEW
 import YoutubePlayer from 'react-native-youtube-iframe';
 import { FloatingActions } from '../components/floating-actions';
-import { useSafeAreaInsets } from 'react-native-safe-area-context'; // NEW
 
 
 export default function UserGuide() {
@@ -107,7 +107,7 @@ export default function UserGuide() {
         style={{ flex: 1 }}
       >
         <View style={{ flex: 1, backgroundColor: 'transparent' }}>
-          <ScrollView contentContainerStyle={{ padding: 20, paddingBottom: 32, marginTop: 20 }}>
+          <ScrollView contentContainerStyle={{ padding: 20, paddingBottom: 32, marginTop: 50 }}>
             {/* Header */}
             <View style={{ alignItems: 'center', marginBottom: 12 }}>
               <Text style={{ fontSize: 26, fontWeight: '800', color: 'white', textAlign: 'center', letterSpacing: 0.3 }}>
