@@ -299,7 +299,7 @@ export default function LiveResults() {
             elevation: 3,
           }}
         /> */}
-        <View style={{ flex: 1, padding: 20, backgroundColor: 'transparent', marginTop: 50 }}>
+        <View style={{ flex: 1, padding: 20, backgroundColor: 'transparent', marginTop: 57 }}>
           <Text
             style={{
               fontSize: 26,

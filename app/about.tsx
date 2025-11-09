@@ -91,7 +91,7 @@ export default function About() {
           <View style={{ flex: 1, backgroundColor: 'transparent' }}>
             <ScrollView contentContainerStyle={{ padding: 20, paddingBottom: 32 }}>
               {/* Header */}
-              <View style={{ alignItems: 'center', marginBottom: 12, marginTop: 40 }}>
+              <View style={{ alignItems: 'center', marginBottom: 12, marginTop: 47 }}>
                 <Text style={{ fontSize: 26, fontWeight: '800', color: 'white', textAlign: 'center', letterSpacing: 0.3 }}>
                   About Us
                 </Text>

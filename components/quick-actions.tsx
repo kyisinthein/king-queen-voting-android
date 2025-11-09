@@ -23,10 +23,11 @@ export function QuickActions({ visible, onClose }: { visible: boolean; onClose: 
         <View
           style={{
             backgroundColor: '#fff',
-            width: '90%',
-            maxWidth: 460,
-            borderRadius: 20,
-            padding: 16,
+            width: '85%',
+            maxWidth: 500,
+            
+            borderRadius: 25,
+            padding: 20,
           }}
         >
           <Text style={{ fontSize: 18, fontWeight: '700', textAlign: 'center', marginBottom: 12 }}>

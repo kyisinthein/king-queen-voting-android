@@ -107,7 +107,7 @@ export default function UserGuide() {
         style={{ flex: 1 }}
       >
         <View style={{ flex: 1, backgroundColor: 'transparent' }}>
-          <ScrollView contentContainerStyle={{ padding: 20, paddingBottom: 32, marginTop: 50 }}>
+          <ScrollView contentContainerStyle={{ padding: 20, paddingBottom: 100, marginTop: 57 }}>
             {/* Header */}
             <View style={{ alignItems: 'center', marginBottom: 12 }}>
               <Text style={{ fontSize: 26, fontWeight: '800', color: 'white', textAlign: 'center', letterSpacing: 0.3 }}>
@@ -174,7 +174,7 @@ export default function UserGuide() {
             >
               {!videoError ? (
                 <YoutubePlayer
-                  height={190}
+                  height={175}
                   play={false}
                   videoId="dp7FlCEvCXY"
                   initialPlayerParams={{

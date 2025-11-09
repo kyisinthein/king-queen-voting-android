@@ -173,7 +173,7 @@ export default function AdminDashboard() {
           borderBottomWidth: 1,
           borderBottomColor: 'rgba(255, 255, 255, 0.2)',
         }}>
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 40 }}>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 47 }}>
             <View>
               <Text style={{ fontSize: 24, fontWeight: '700', color: 'white' }}>
                 Admin Dashboard
@@ -329,7 +329,7 @@ function ActionButton({
         </Text>
       </View>
       {!disabled && (
-        <Text style={{ fontSize: 18, color: 'rgba(255, 255, 255, 0.6)' }}>→</Text>
+        <Text style={{ fontSize: 18, color: 'rgba(255, 255, 255, 0.6)' }}></Text>
       )}
       {disabled && (
         <Text style={{ fontSize: 12, color: 'rgba(255, 255, 255, 0.5)', fontStyle: 'italic' }}>

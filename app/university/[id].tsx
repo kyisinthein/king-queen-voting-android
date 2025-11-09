@@ -145,7 +145,7 @@ export default function UniversityCandidates() {
         end={{ x: 0, y: 1 }}
         style={{ flex: 1 }}
       >
-        <View style={{ flex: 1, padding: 20, backgroundColor: 'transparent', marginTop: 50 }}>
+        <View style={{ flex: 1, padding: 20, backgroundColor: 'transparent', marginTop: 57 }}>
           <Text style={{ alignSelf: 'center', fontSize: 25, fontWeight: '800', color: 'white', letterSpacing: 0.3 }}>
             Choose Candidate
           </Text>
