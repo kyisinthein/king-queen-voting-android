@@ -1,3 +1,4 @@
+import { AdBanner } from '@/components/ad-banner';
 import { LinearGradient } from 'expo-linear-gradient';
 import React, { useState } from 'react';
 import { Linking, Pressable, SafeAreaView, ScrollView, Text, View } from 'react-native';
@@ -381,6 +382,9 @@ export default function About() {
             </ScrollView>
             {/* Floating actions — render inside the container so it shows */}
             <FloatingActions style={{ position: 'absolute', right: 12, bottom: 24 }} />
+            <View style={{ position: 'absolute', left: 0, right: 0, bottom: insets.bottom + 50, zIndex: 100 }}>
+              <AdBanner />
+            </View>
           </View>
         </LinearGradient>
       </SafeAreaView>

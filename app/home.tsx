@@ -1,3 +1,4 @@
+import { AdBanner } from '@/components/ad-banner';
 import { FloatingActions } from '@/components/floating-actions';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -202,8 +203,10 @@ export default function Home() {
           </View>
         </View>
 
-        {/* Floating actions button (gear) */}
         <FloatingActions />
+        <View style={{ position: 'absolute', left: 0, right: 0, bottom: insets.bottom + 50, zIndex: 100 }}>
+          <AdBanner />
+        </View>
       </LinearGradient>
     </SafeAreaView>
   );
