@@ -32,6 +32,7 @@ export default function RootLayout() {
         <Stack.Screen name="university/[id]" options={{ headerShown: false }} />
         <Stack.Screen name="sponsors" options={{ headerShown: false }} />
         <Stack.Screen name="home" options={{ headerShown: false }} />
+        <Stack.Screen name="lucky-spin" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
       </Stack>
       {/* Show status bar on Android and iOS; keep light content */}

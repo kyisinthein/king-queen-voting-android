@@ -14,7 +14,7 @@ const ACTIONS: Action[] = [
     { label: 'About us',   icon: 'info.circle.fill',  href: '/about' },
     { label: 'User Guide', icon: 'book.fill',         href: '/guide' },
   { label: 'Sponsors',   icon: 'star.fill',         href: '/sponsors' },
-  { label: 'ADS',        icon: 'gift.fill',         href: '#' },
+  { label: 'ကံစမ်းရန်',        icon: 'gift.fill',         href: '#' },
 ];
 
 export function QuickActions({ visible, onClose }: { visible: boolean; onClose: () => void }) {
@@ -39,7 +39,7 @@ export function QuickActions({ visible, onClose }: { visible: boolean; onClose: 
       if (pendingMyVotesNavRef.current) {
         interstitial.show().catch(() => {
           pendingMyVotesNavRef.current = false;
-          router.push('/my-votes');
+          router.push('/about');
         });
       }
     });
@@ -47,13 +47,13 @@ export function QuickActions({ visible, onClose }: { visible: boolean; onClose: 
       setAdLoaded(false);
       if (pendingMyVotesNavRef.current) {
         pendingMyVotesNavRef.current = false;
-        router.push('/my-votes');
+        router.push('/about');
       }
     });
     const unsubError = interstitial.addAdEventListener(AdEventType.ERROR, () => {
       if (pendingMyVotesNavRef.current) {
         pendingMyVotesNavRef.current = false;
-        router.push('/my-votes');
+        router.push('/about');
       }
     });
 
@@ -126,27 +126,20 @@ export function QuickActions({ visible, onClose }: { visible: boolean; onClose: 
                 key={a.label}
                 onPress={() => {
                   onClose();
-                  if (a.label === 'My Votes') {
+                  if (a.label === 'About us') {
                     pendingMyVotesNavRef.current = true;
                     if (adLoaded) {
                       interstitial.show().catch(() => {
                         pendingMyVotesNavRef.current = false;
-                        router.push('/my-votes');
+                        router.push('/about');
                       });
                     } else {
                       interstitial.load();
                     }
                   } else if (a.label === 'List') {
                     router.push({ pathname: '/university/[id]', params: { id: 'a12e27fd-8a93-4234-9b76-b1c63f2be766' } } as any);
-                  } else if (a.label === 'ADS') {
-                    pendingRewardShowRef.current = true;
-                    if (rewardLoaded) {
-                      rewarded.show().catch(() => {
-                        pendingRewardShowRef.current = false;
-                      });
-                    } else {
-                      rewarded.load();
-                    }
+                  } else if (a.label === 'ကံစမ်းရန်') {
+                    router.push('/lucky-spin');
                   } else {
                     router.push(a.href as any);
                   }
@@ -163,14 +156,14 @@ export function QuickActions({ visible, onClose }: { visible: boolean; onClose: 
                 }}>
                 <IconSymbol
                   name={a.icon as any}
-                  color={a.label === 'Sponsors' ? '#FF0000' : a.label === 'ADS' ? '#0A7E4A' : '#333'}
+                  color={a.label === 'Sponsors' ? '#FF0000' : a.label === 'ကံစမ်းရန်' ? '#109e32ff' : '#333'}
                   size={22}
                 />
                 <Text
                   style={{
                     marginTop: 6,
-                    fontWeight: '600',
-                    color: a.label === 'Sponsors' ? '#FF0000' : a.label === 'ADS' ? '#0A7E4A' : '#333',
+                    fontWeight: '800',
+                    color: a.label === 'Sponsors' ? '#FF0000' : a.label === 'ကံစမ်းရန်' ? '#109e32ff' : '#333',
                   }}
                 >
                   {a.label}

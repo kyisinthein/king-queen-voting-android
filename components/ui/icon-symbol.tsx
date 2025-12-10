@@ -25,6 +25,7 @@ const MAPPING = {
   'paperplane.fill': 'send',
   'checkmark.circle.fill': 'check-circle',
   'gift.fill': 'redeem',
+  'clock.fill': 'schedule',
   'chevron.left.forwardslash.chevron.right': 'code',
   'chevron.right': 'chevron-right',
 } as IconMapping;

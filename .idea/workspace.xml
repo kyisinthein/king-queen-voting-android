@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86372968-bab4-4bf4-b5eb-4a35d099d07e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/guide.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/guide.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/quick-actions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/quick-actions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/icon-symbol.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/icon-symbol.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/policy.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/policy.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

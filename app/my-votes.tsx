@@ -120,9 +120,9 @@ export default function MyVotes() {
                     paddingVertical: 6,
                     paddingHorizontal: 12,
                     borderRadius: 16,
-                    backgroundColor: 'rgba(255,255,255,0.21)',
+                    backgroundColor: 'rgba(255,255,255,0)',
                     borderWidth: 1,
-                    borderColor: 'rgba(255,255,255,0.45)',
+                    borderColor: 'rgba(255, 255, 255, 0)',
                   }}
                 >
                   <Text style={{ color: 'white', fontWeight: '700' }}>Tickets left: {ticketsLeftTotal}</Text>

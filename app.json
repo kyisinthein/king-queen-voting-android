@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "K-Q-Vote-android",
+    "name": "K-Q Voting",
     "slug": "K-Q-Vote-android",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "kqvoteandroid",
