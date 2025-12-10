@@ -204,6 +204,9 @@ export default function Home() {
         </View>
 
         <FloatingActions />
+        <View style={{ position: 'absolute', left: 0, right: 0, bottom: insets.bottom + 100, alignItems: 'center' }}>
+          <AdBanner/>
+        </View>
         <View style={{ position: 'absolute', left: 0, right: 0, bottom: insets.bottom + 50, zIndex: 100 }}>
           <AdBanner />
         </View>
